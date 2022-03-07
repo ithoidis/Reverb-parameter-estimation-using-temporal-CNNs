@@ -46,7 +46,6 @@ sample_len = 6 # seconds
 trainer = Trainer(sample_len=sample_len)
 trainer.generate_sim_dataset()
 trainer.train(epochs=100)
-
 ```
 By default this will train on the available CUDA-capable GPU in your system.
 
@@ -67,7 +66,6 @@ where $x$ is a torch tensor of a reverberated speech signal.
 trainer.test()
 trainer.test_in_noisy()
 trainer.export_results()
-
 ```
 
 ### Authors
