@@ -91,7 +91,7 @@ trainer.export_results()
 
 ### Contact
 
-e-mail: ithoidis@auth.gr
+e-mail: ithoidis at auth dot gr
 
 ### Notes
 
