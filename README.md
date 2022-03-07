@@ -42,6 +42,7 @@ or alternatively
 trainer.test()
 trainer.test_in_noisy()
 trainer.export_results()
+```
 
 ### Training
 
