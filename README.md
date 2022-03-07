@@ -56,7 +56,7 @@ By default this will train on the available CUDA-capable GPU in your system.
 trainer.load_model('models/RevNetGLU.pt)
 y = trainer.model(x)
 ```
-where $x$ is a torch tensor of a reverberated speech signal.
+where x is a torch tensor of a reverberated speech signal.
 
 #### Evaluate model
 
