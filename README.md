@@ -36,13 +36,6 @@ NOISE_PATH = 'the/root/folder/of/' # UrbanSound8k
 ```
 6. Run Reverb.py file to reproduce our results.
 
-or alternatively
-
-```
-trainer.test()
-trainer.test_in_noisy()
-trainer.export_results()
-```
 
 ### Training
 
