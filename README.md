@@ -23,8 +23,7 @@ the following script downloads and prepares the data.
 
 1. Download LibriSpeech
 2. Download [OrilRiver Reverb Plugin](https://www.kvraudio.com/product/orilriver-by-denis-tihanov) by Denis Tihanov, [TAL-Reverb-4](https://tal-software.com/products/tal-reverb-4), or any other reverb VST3 (you will need to write a simple loader for custom VSTs).
-3. Download UrbanSound8k
-4. Resample UrbanSound8k from 22.05 kHz to 16kHz using:
+3. Download UrbanSound8k and resample all audio files from 22.05kHz to 16kHz using the following function:
 ```
 NoiseReal().split_resample_urban(duration=10, fs=16000)
 ```
@@ -33,7 +32,7 @@ NoiseReal().split_resample_urban(duration=10, fs=16000)
 LIBRISPEECH_PATH = 'your/folder/LibriSpeech'
 NOISE_PATH = 'the/root/folder/of/' # UrbanSound8k
 ```
-6. Run Reverb.py file to reproduce our results.
+6. Run Reverb.py file to reproduce our results. This with save the following figures in your project folder.
 
 
 ### Training
