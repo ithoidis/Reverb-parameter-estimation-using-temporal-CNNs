@@ -21,9 +21,9 @@ pip install -r requirements.txt
 ### Data
 the following script downloads and prepares the data.
 
-1. Download LibriSpeech
+1. Download the train-clean-100 subset of the [LibriSpeech ASR corpus](https://www.openslr.org/12) 
 2. Download [OrilRiver Reverb Plugin](https://www.kvraudio.com/product/orilriver-by-denis-tihanov) by Denis Tihanov, [TAL-Reverb-4](https://tal-software.com/products/tal-reverb-4), or any other reverb VST3 (you will need to write a simple loader for custom VSTs).
-3. Download UrbanSound8k and resample all audio files from 22.05kHz to 16kHz using the following function:
+3. Download [UrbanSound8k](https://zenodo.org/record/1203745#.YiZg1C8Rpqs) and resample all audio files from 22.05kHz to 16kHz using the following function:
 ```
 NoiseReal().split_resample_urban(duration=10, fs=16000)
 ```
