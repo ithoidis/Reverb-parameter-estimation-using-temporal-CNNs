@@ -51,14 +51,14 @@ By default this will train on the available CUDA-capable GPU in your system.
 
 ![Loss](images/training_loss.png)
 
-*** Load model and predict
+### Load model and predict
 ```
 trainer.load_model('models/RevNetGLU.pt)
 y = trainer.model(x)
 ```
 where $x$ is a torch tensor of a reverberated speech signal.
 
-*** Evaluate
+#### Evaluate model
 
 ```
 trainer.test()
