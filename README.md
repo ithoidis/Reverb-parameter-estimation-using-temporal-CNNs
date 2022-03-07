@@ -27,7 +27,6 @@ the following script downloads and prepares the data.
 4. Resample UrbanSound8k from 22.05 kHz to 16kHz using:
 ```
 NoiseReal().split_resample_urban(duration=10, fs=16000)
-
 ```
 5. Replace the folder root directories in the Reverb.py file
 ```
