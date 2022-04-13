@@ -1,0 +1,12 @@
+wet_db,N Targets,MAE,R²
+,Single,0.049205,0.953426
+,All,0.050475,0.951797
+reverb_db,N Targets,MAE,R²
+,Single,0.095875,0.779025
+,All,0.086832,0.813838
+decay_time_sec,N Targets,MAE,R²
+,Single,0.120197,0.632018
+,All,0.117074,0.632792
+room_size,N Targets,MAE,R²
+,Single,0.092205,0.748924
+,All,0.0879507,0.774460

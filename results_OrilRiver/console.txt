@@ -1,0 +1,248 @@
+Folder:  models\03-03Rev_8
+Fold batches: 2853 714
+Model: RevNetGLU(
+  (conv1): Conv1d(1, 1024, kernel_size=(512,), stride=(4,), padding=(256,))
+  (act1): GLU(dim=-2)
+  (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool1): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+  (drop1): Dropout(p=0.3, inplace=False)
+  (conv2): Conv1d(512, 128, kernel_size=(64,), stride=(1,), padding=(32,))
+  (act2): GLU(dim=-2)
+  (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool2): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+  (drop2): Dropout(p=0.3, inplace=False)
+  (conv3): Conv1d(64, 128, kernel_size=(64,), stride=(1,), padding=(32,))
+  (act3): GLU(dim=-2)
+  (bn3): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool3): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+  (drop3): Dropout(p=0.3, inplace=False)
+  (conv4): Conv1d(64, 128, kernel_size=(64,), stride=(1,), padding=(32,))
+  (act4): GLU(dim=-2)
+  (bn4): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool4): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+  (drop4): Dropout(p=0.3, inplace=False)
+  (conv5): Conv1d(64, 256, kernel_size=(64,), stride=(1,), padding=(32,))
+  (act5): GLU(dim=-2)
+  (bn5): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool5): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+  (drop5): Dropout(p=0.3, inplace=False)
+  (conv6): Conv1d(128, 2048, kernel_size=(64,), stride=(1,), padding=(32,))
+  (act6): GLU(dim=-2)
+  (bn6): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool6): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+  (drop6): Dropout(p=0.3, inplace=False)
+  (lin5o): ModuleList(
+    (0): Linear(in_features=1024, out_features=256, bias=True)
+    (1): Linear(in_features=1024, out_features=256, bias=True)
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): Linear(in_features=1024, out_features=256, bias=True)
+  )
+  (norm5o): ModuleList(
+    (0): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (drop5o): ModuleList(
+    (0): Dropout(p=0.3, inplace=False)
+    (1): Dropout(p=0.3, inplace=False)
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Dropout(p=0.3, inplace=False)
+  )
+  (lin6o): ModuleList(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): Linear(in_features=256, out_features=128, bias=True)
+  )
+  (norm6o): ModuleList(
+    (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (drop6o): ModuleList(
+    (0): Dropout(p=0.3, inplace=False)
+    (1): Dropout(p=0.3, inplace=False)
+    (2): Dropout(p=0.3, inplace=False)
+    (3): Dropout(p=0.3, inplace=False)
+  )
+  (linout): ModuleList(
+    (0): Linear(in_features=128, out_features=1, bias=True)
+    (1): Linear(in_features=128, out_features=1, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+    (3): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Speech samples: 57076
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv1d-1          [-1, 1024, 20001]         525,312
+               GLU-2           [-1, 512, 20001]               0
+       BatchNorm1d-3           [-1, 512, 20001]           1,024
+         MaxPool1d-4            [-1, 512, 5000]               0
+           Dropout-5            [-1, 512, 5000]               0
+            Conv1d-6            [-1, 128, 5001]       4,194,432
+               GLU-7             [-1, 64, 5001]               0
+       BatchNorm1d-8             [-1, 64, 5001]             128
+         MaxPool1d-9             [-1, 64, 1250]               0
+          Dropout-10             [-1, 64, 1250]               0
+           Conv1d-11            [-1, 128, 1251]         524,416
+              GLU-12             [-1, 64, 1251]               0
+      BatchNorm1d-13             [-1, 64, 1251]             128
+        MaxPool1d-14              [-1, 64, 312]               0
+          Dropout-15              [-1, 64, 312]               0
+           Conv1d-16             [-1, 128, 313]         524,416
+              GLU-17              [-1, 64, 313]               0
+      BatchNorm1d-18              [-1, 64, 313]             128
+        MaxPool1d-19               [-1, 64, 78]               0
+          Dropout-20               [-1, 64, 78]               0
+           Conv1d-21              [-1, 256, 79]       1,048,832
+              GLU-22              [-1, 128, 79]               0
+      BatchNorm1d-23              [-1, 128, 79]             256
+        MaxPool1d-24              [-1, 128, 19]               0
+          Dropout-25              [-1, 128, 19]               0
+           Conv1d-26             [-1, 2048, 20]      16,779,264
+              GLU-27             [-1, 1024, 20]               0
+      BatchNorm1d-28             [-1, 1024, 20]           2,048
+        MaxPool1d-29              [-1, 1024, 5]               0
+          Dropout-30              [-1, 1024, 5]               0
+           Linear-31                  [-1, 256]         262,400
+          Dropout-32                  [-1, 256]               0
+           Linear-33                  [-1, 128]          32,896
+          Dropout-34                  [-1, 128]               0
+           Linear-35                    [-1, 1]             129
+           Linear-36                  [-1, 256]         262,400
+          Dropout-37                  [-1, 256]               0
+           Linear-38                  [-1, 128]          32,896
+          Dropout-39                  [-1, 128]               0
+           Linear-40                    [-1, 1]             129
+           Linear-41                  [-1, 256]         262,400
+          Dropout-42                  [-1, 256]               0
+           Linear-43                  [-1, 128]          32,896
+          Dropout-44                  [-1, 128]               0
+           Linear-45                    [-1, 1]             129
+           Linear-46                  [-1, 256]         262,400
+          Dropout-47                  [-1, 256]               0
+           Linear-48                  [-1, 128]          32,896
+          Dropout-49                  [-1, 128]               0
+           Linear-50                    [-1, 1]             129
+================================================================
+Total params: 24,782,084
+Trainable params: 24,782,084
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.31
+Forward/backward pass size (MB): 367.07
+Params size (MB): 94.54
+Estimated Total Size (MB): 461.92
+----------------------------------------------------------------
+Training...
+902s - epoch:  1/200 - loss: 0.1939 - val_loss: 0.1492 - train_dist: 0.194 - val_dist: 0.149 - val_R²: 0.53
+905s - epoch:  2/200 - loss: 0.1522 - val_loss: 0.1260 - train_dist: 0.152 - val_dist: 0.126 - val_R²: 0.65
+909s - epoch:  3/200 - loss: 0.1355 - val_loss: 0.1105 - train_dist: 0.136 - val_dist: 0.111 - val_R²: 0.72
+907s - epoch:  4/200 - loss: 0.1239 - val_loss: 0.1003 - train_dist: 0.124 - val_dist: 0.100 - val_R²: 0.75
+907s - epoch:  5/200 - loss: 0.1164 - val_loss: 0.0899 - train_dist: 0.116 - val_dist: 0.090 - val_R²: 0.79
+906s - epoch:  6/200 - loss: 0.1102 - val_loss: 0.0903 - train_dist: 0.110 - val_dist: 0.090 - val_R²: 0.79
+905s - epoch:  7/200 - loss: 0.1058 - val_loss: 0.0871 - train_dist: 0.106 - val_dist: 0.087 - val_R²: 0.80
+906s - epoch:  8/200 - loss: 0.1020 - val_loss: 0.0843 - train_dist: 0.102 - val_dist: 0.084 - val_R²: 0.81
+906s - epoch:  9/200 - loss: 0.0987 - val_loss: 0.0869 - train_dist: 0.099 - val_dist: 0.087 - val_R²: 0.81
+906s - epoch: 10/200 - loss: 0.0960 - val_loss: 0.0782 - train_dist: 0.096 - val_dist: 0.078 - val_R²: 0.83
+905s - epoch: 11/200 - loss: 0.0940 - val_loss: 0.0784 - train_dist: 0.094 - val_dist: 0.078 - val_R²: 0.84
+904s - epoch: 12/200 - loss: 0.0915 - val_loss: 0.0787 - train_dist: 0.092 - val_dist: 0.079 - val_R²: 0.83
+903s - epoch: 13/200 - loss: 0.0894 - val_loss: 0.0769 - train_dist: 0.089 - val_dist: 0.077 - val_R²: 0.84
+903s - epoch: 14/200 - loss: 0.0878 - val_loss: 0.0771 - train_dist: 0.088 - val_dist: 0.077 - val_R²: 0.84
+903s - epoch: 15/200 - loss: 0.0862 - val_loss: 0.0757 - train_dist: 0.086 - val_dist: 0.076 - val_R²: 0.84
+904s - epoch: 16/200 - loss: 0.0848 - val_loss: 0.0759 - train_dist: 0.085 - val_dist: 0.076 - val_R²: 0.84
+902s - epoch: 17/200 - loss: 0.0833 - val_loss: 0.0763 - train_dist: 0.083 - val_dist: 0.076 - val_R²: 0.84
+902s - epoch: 18/200 - loss: 0.0822 - val_loss: 0.0780 - train_dist: 0.082 - val_dist: 0.078 - val_R²: 0.84
+902s - epoch: 19/200 - loss: 0.0813 - val_loss: 0.0747 - train_dist: 0.081 - val_dist: 0.075 - val_R²: 0.85
+902s - epoch: 20/200 - loss: 0.0797 - val_loss: 0.0785 - train_dist: 0.080 - val_dist: 0.079 - val_R²: 0.84
+901s - epoch: 21/200 - loss: 0.0789 - val_loss: 0.0740 - train_dist: 0.079 - val_dist: 0.074 - val_R²: 0.85
+900s - epoch: 22/200 - loss: 0.0775 - val_loss: 0.0745 - train_dist: 0.077 - val_dist: 0.075 - val_R²: 0.84
+901s - epoch: 23/200 - loss: 0.0768 - val_loss: 0.0725 - train_dist: 0.077 - val_dist: 0.073 - val_R²: 0.85
+901s - epoch: 24/200 - loss: 0.0759 - val_loss: 0.0740 - train_dist: 0.076 - val_dist: 0.074 - val_R²: 0.85
+900s - epoch: 25/200 - loss: 0.0751 - val_loss: 0.0741 - train_dist: 0.075 - val_dist: 0.074 - val_R²: 0.85
+902s - epoch: 26/200 - loss: 0.0744 - val_loss: 0.0743 - train_dist: 0.074 - val_dist: 0.074 - val_R²: 0.85
+902s - epoch: 27/200 - loss: 0.0736 - val_loss: 0.0724 - train_dist: 0.074 - val_dist: 0.072 - val_R²: 0.85
+901s - epoch: 28/200 - loss: 0.0728 - val_loss: 0.0735 - train_dist: 0.073 - val_dist: 0.073 - val_R²: 0.85
+900s - epoch: 29/200 - loss: 0.0720 - val_loss: 0.0750 - train_dist: 0.072 - val_dist: 0.075 - val_R²: 0.84
+900s - epoch: 30/200 - loss: 0.0716 - val_loss: 0.0728 - train_dist: 0.072 - val_dist: 0.073 - val_R²: 0.85
+901s - epoch: 31/200 - loss: 0.0708 - val_loss: 0.0737 - train_dist: 0.071 - val_dist: 0.074 - val_R²: 0.85
+901s - epoch: 32/200 - loss: 0.0703 - val_loss: 0.0738 - train_dist: 0.070 - val_dist: 0.074 - val_R²: 0.85
+900s - epoch: 33/200 - loss: 0.0696 - val_loss: 0.0724 - train_dist: 0.070 - val_dist: 0.072 - val_R²: 0.85
+900s - epoch: 34/200 - loss: 0.0689 - val_loss: 0.0757 - train_dist: 0.069 - val_dist: 0.076 - val_R²: 0.84
+901s - epoch: 35/200 - loss: 0.0689 - val_loss: 0.0740 - train_dist: 0.069 - val_dist: 0.074 - val_R²: 0.85
+901s - epoch: 36/200 - loss: 0.0681 - val_loss: 0.0740 - train_dist: 0.068 - val_dist: 0.074 - val_R²: 0.85
+900s - epoch: 37/200 - loss: 0.0677 - val_loss: 0.0779 - train_dist: 0.068 - val_dist: 0.078 - val_R²: 0.84
+901s - epoch: 38/200 - loss: 0.0670 - val_loss: 0.0766 - train_dist: 0.067 - val_dist: 0.077 - val_R²: 0.84
+902s - epoch: 39/200 - loss: 0.0667 - val_loss: 0.0743 - train_dist: 0.067 - val_dist: 0.074 - val_R²: 0.85
+902s - epoch: 40/200 - loss: 0.0660 - val_loss: 0.0737 - train_dist: 0.066 - val_dist: 0.074 - val_R²: 0.84
+903s - epoch: 41/200 - loss: 0.0657 - val_loss: 0.0705 - train_dist: 0.066 - val_dist: 0.070 - val_R²: 0.85
+904s - epoch: 42/200 - loss: 0.0657 - val_loss: 0.0703 - train_dist: 0.066 - val_dist: 0.070 - val_R²: 0.85
+904s - epoch: 43/200 - loss: 0.0649 - val_loss: 0.0756 - train_dist: 0.065 - val_dist: 0.076 - val_R²: 0.84
+905s - epoch: 44/200 - loss: 0.0642 - val_loss: 0.0744 - train_dist: 0.064 - val_dist: 0.074 - val_R²: 0.84
+903s - epoch: 45/200 - loss: 0.0642 - val_loss: 0.0734 - train_dist: 0.064 - val_dist: 0.073 - val_R²: 0.85
+903s - epoch: 46/200 - loss: 0.0638 - val_loss: 0.0717 - train_dist: 0.064 - val_dist: 0.072 - val_R²: 0.85
+905s - epoch: 47/200 - loss: 0.0635 - val_loss: 0.0733 - train_dist: 0.063 - val_dist: 0.073 - val_R²: 0.85
+906s - epoch: 48/200 - loss: 0.0631 - val_loss: 0.0720 - train_dist: 0.063 - val_dist: 0.072 - val_R²: 0.85
+910s - epoch: 49/200 - loss: 0.0628 - val_loss: 0.0726 - train_dist: 0.063 - val_dist: 0.073 - val_R²: 0.85
+911s - epoch: 50/200 - loss: 0.0625 - val_loss: 0.0713 - train_dist: 0.062 - val_dist: 0.071 - val_R²: 0.84
+908s - epoch: 51/200 - loss: 0.0621 - val_loss: 0.0740 - train_dist: 0.062 - val_dist: 0.074 - val_R²: 0.85
+905s - epoch: 52/200 - loss: 0.0616 - val_loss: 0.0705 - train_dist: 0.062 - val_dist: 0.071 - val_R²: 0.85
+904s - epoch: 53/200 - loss: 0.0614 - val_loss: 0.0711 - train_dist: 0.061 - val_dist: 0.071 - val_R²: 0.84
+905s - epoch: 54/200 - loss: 0.0611 - val_loss: 0.0759 - train_dist: 0.061 - val_dist: 0.076 - val_R²: 0.84
+905s - epoch: 55/200 - loss: 0.0608 - val_loss: 0.0700 - train_dist: 0.061 - val_dist: 0.070 - val_R²: 0.85
+906s - epoch: 56/200 - loss: 0.0607 - val_loss: 0.0739 - train_dist: 0.061 - val_dist: 0.074 - val_R²: 0.84
+904s - epoch: 57/200 - loss: 0.0603 - val_loss: 0.0734 - train_dist: 0.060 - val_dist: 0.073 - val_R²: 0.84
+906s - epoch: 58/200 - loss: 0.0601 - val_loss: 0.0745 - train_dist: 0.060 - val_dist: 0.074 - val_R²: 0.84
+905s - epoch: 59/200 - loss: 0.0598 - val_loss: 0.0719 - train_dist: 0.060 - val_dist: 0.072 - val_R²: 0.84
+902s - epoch: 60/200 - loss: 0.0595 - val_loss: 0.0696 - train_dist: 0.060 - val_dist: 0.070 - val_R²: 0.85
+904s - epoch: 61/200 - loss: 0.0589 - val_loss: 0.0708 - train_dist: 0.059 - val_dist: 0.071 - val_R²: 0.85
+Early stopping!
+Evaluating...
+Test Results:
+        Parameter       MAE        R²
+0          wet_db  0.050476  0.951797
+1       reverb_db  0.086832  0.813839
+2  decay_time_sec  0.117074  0.632792
+3       room_size  0.087951  0.774460
+Evaluating in Noisy conditions...
+Test Results: 0 dB SNR
+        Parameter       MAE        R²
+0          wet_db  0.164298  0.421978
+1       reverb_db  0.210502  0.137651
+2  decay_time_sec  0.234588 -0.092342
+3       room_size  0.215719  0.010171
+Test Results: 20 dB SNR
+        Parameter       MAE        R²
+0          wet_db  0.053149  0.946765
+1       reverb_db  0.098403  0.757243
+2  decay_time_sec  0.140216  0.497895
+3       room_size  0.093617  0.756622
+Test Results: 40 dB SNR
+        Parameter       MAE        R²
+0          wet_db  0.049058  0.954729
+1       reverb_db  0.088091  0.810279
+2  decay_time_sec  0.121730  0.603121
+3       room_size  0.086127  0.781999
+Test Results: 60 dB SNR
+        Parameter       MAE        R²
+0          wet_db  0.049224  0.954732
+1       reverb_db  0.088560  0.808899
+2  decay_time_sec  0.119660  0.618403
+3       room_size  0.089318  0.771050
+Test Results: 80 dB SNR
+        Parameter       MAE        R²
+0          wet_db  0.049708  0.954386
+1       reverb_db  0.086650  0.815351
+2  decay_time_sec  0.117848  0.636255
+3       room_size  0.088317  0.778108
+[0, 20, 40, 60, 80]
+[tensor(0.2064), tensor(0.0963), tensor(0.0863), tensor(0.0867), tensor(0.0857)]
+[0.11936457455158234, 0.7396313110366464, 0.7875322131440043, 0.7882710257545114, 0.7960249595344067]
+Saving: models\03-03Rev_8\plots\wet_db.pdf
+Saving: models\03-03Rev_8\plots\reverb_db.pdf
+Saving: models\03-03Rev_8\plots\decay_time_sec.pdf
+Saving: models\03-03Rev_8\plots\room_size.pdf
