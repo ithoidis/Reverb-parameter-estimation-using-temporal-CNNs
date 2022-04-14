@@ -7,7 +7,7 @@ This is the repository of the RevNet project. Our original paper can be found [h
 
 A data-driven approach for estimating room reverberation parameters is proposed and evaluated. A dataset containing heterogeneous audio (speech, noise, etc.) is formed. Several types of artificial reverberation are selected and applied to the measurement signals, using different parameterizations (e.g. reverberation time, signal-to-reverberation ratio etc.). The dataset is used to train deep convolutional neural networks to estimate such parameters. Effects of dataset size, sample duration, speaker, and room dependence are also reported. 
 
-![RevNet](images/model.pdf)
+![RevNet](model.pdf)
 
 
 ### Dependencies
@@ -79,15 +79,11 @@ trainer.export_results()
 ```
 @article{thoidis2022reverb,
   title={Disentangled estimation of reverberation parameters using temporal convolutional networks},
-  author={Thoidis, Iordanis and Vryzas, Nikolaos and Vrysis, Lazaros and Kotsakis, Rigas and Dimoulas, Charalampos},
+  author={Thoidis, Iordanis and Vryzas, Nikolaos and Vrysis, Lazaros and Kotsakis, Rigas and Kalliris, George and Dimoulas, Charalampos},
   journal={AES 152nd Convention Papers},
   year={2022}
 }
 ```
-
-### Contact
-
-e-mail: ithoidis at auth dot gr
 
 ### Notes
 
