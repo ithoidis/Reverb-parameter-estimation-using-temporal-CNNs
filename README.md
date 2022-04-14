@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ### Data
-the following script downloads and prepares the data.
+To run the experiment:
 
 1. Download the train-clean-100 subset of the [LibriSpeech ASR corpus](https://www.openslr.org/12) 
 2. Download [OrilRiver Reverb Plugin](https://www.kvraudio.com/product/orilriver-by-denis-tihanov) by Denis Tihanov, [TAL-Reverb-4](https://tal-software.com/products/tal-reverb-4), or any other reverb VST3 (you will need to write a simple loader for custom VSTs).
@@ -49,7 +49,9 @@ By default this will train on the available CUDA-capable GPU in your system.
 
 **L1 loss**
 
-![Loss](images/training_loss.png)
+![Loss TAL-Reverb-4](https://github.com/ithoidis/Reverb-parameter-estimation-using-temporal-CNNs/blob/main/results_TAL-Reverb-4/plots/train_history_param_tal.png)
+
+![Loss OrilRiver](https://github.com/ithoidis/Reverb-parameter-estimation-using-temporal-CNNs/blob/main/results_OrilRiver/plots/train_history_param_oril.png)
 
 ### Load model and predict
 ```
@@ -68,11 +70,12 @@ trainer.export_results()
 
 ### Authors
 
-* **Iordanis Thoidis** (AVLab, Department of Electrical and Computer Engineering, A.U.Th.)
-* **Nikos Vryzas** PhD, (M3C Group)...
-* **Lazaros Vrysis** PhD...
-* **Rigas Kotsakis** ....
-* **Charalampos Dimoulas** ...
+* **Iordanis Thoidis**, Aristotle University of Thessaloniki, Department of Electrical and Computer Engineering, Laboratory of Electroacoustics and TV Systems
+* **Nikos Vryzas**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
+* **Lazaros Vrysis**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
+* **Rigas Kotsakis**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
+* **George Kalliris**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
+* **Charalampos Dimoulas**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
  
 ### Reference
 
