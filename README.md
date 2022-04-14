@@ -3,9 +3,14 @@
 
 ### Introduction
 
-This is the repository of the RevNet project. Our original paper can be found [here](https://aes.org/link).
+This is the repository of the ReverbNet project. Our original paper can be found [here](https://aes.org/link).
 
-A data-driven approach for estimating room reverberation parameters is proposed and evaluated. A dataset containing heterogeneous audio (speech, noise, etc.) is formed. Several types of artificial reverberation are selected and applied to the measurement signals, using different parameterizations (e.g. reverberation time, signal-to-reverberation ratio etc.). The dataset is used to train deep convolutional neural networks to estimate such parameters. Effects of dataset size, sample duration, speaker, and room dependence are also reported. 
+A data-driven approach for estimating room reverberation parameters is proposed and evaluated. 
+In this study, we propose ReverbNet, an end-to-end deep learning-based system that processes raw audio waveforms to non-intrusively estimate multiple reverberation parameters from a single speech utterance.
+We employ a temporal convolutional network to map reverberated speech signals to a latent embedding space, and then predict the effect parameters that have been applied to the anechoic signals using a multi-branch head network.
+The proposed approach is evaluated using simulated room reverberation by two popular  effect processors.
+We show that the proposed approach can accurately estimate multiple reverberation parameters from speech signals and can generalise to unseen speakers and diverse simulated environments.
+The results also indicate that the use of multiple branches disentangles the embedding space from misalignments between input features and subtasks, and has a beneficial effect on the estimation of individual reverberation parameters.
 
 ![RevNet](model.png)
 
