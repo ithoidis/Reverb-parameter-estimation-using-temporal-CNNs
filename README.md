@@ -19,9 +19,9 @@ pip install -r requirements.txt
 ### Data
 To run the experiment:
 
-1. Download the train-clean-100 subset of the [LibriSpeech ASR corpus](https://www.openslr.org/12) 
+1. Download the train-clean-100 and test-clean subsets of the [LibriSpeech ASR corpus](https://www.openslr.org/12) 
 2. Download [OrilRiver Reverb Plugin](https://www.kvraudio.com/product/orilriver-by-denis-tihanov) by Denis Tihanov, [TAL-Reverb-4](https://tal-software.com/products/tal-reverb-4), or any other reverb VST3 (you will need to write a simple loader for custom VSTs).
-3. Download [UrbanSound8k](https://zenodo.org/record/1203745#.YiZg1C8Rpqs) and resample all audio files from 22.05kHz to 16kHz using the following function:
+3. To reproduce also the effects of noise on reverberation parameter estimation, please also download the [UrbanSound8k](https://zenodo.org/record/1203745#.YiZg1C8Rpqs) dataset and resample all audio files from 22.05kHz to 16kHz using the following function:
 ```
 NoiseReal().split_resample_urban(duration=10, fs=16000)
 ```
@@ -32,10 +32,9 @@ NOISE_PATH = 'the/root/folder/of/' # UrbanSound8k
 ```
 6. Run Reverb.py file to reproduce our results. This with save the following figures in your project folder.
 
-
 ### Training
 
-Once you have the datasets prepared you can simply run the training process in a python console using:
+Once you have prepared the datasets, simply run the training process in a python console using:
 
 ```
 sample_len = 6 # seconds
@@ -43,7 +42,7 @@ trainer = Trainer(sample_len=sample_len)
 trainer.generate_sim_dataset()
 trainer.train(epochs=100)
 ```
-By default this will train on the available CUDA-capable GPU in your system.
+By default this will train the ReverbNet model on the available CUDA-capable GPU in your system.
 
 **L1 loss**
 
@@ -51,20 +50,25 @@ By default this will train on the available CUDA-capable GPU in your system.
 
 ![Loss OrilRiver](https://github.com/ithoidis/Reverb-parameter-estimation-using-temporal-CNNs/blob/main/results_OrilRiver/plots/train_history_param_oril.png)
 
-### Load model and predict
-```
-trainer.load_model('models/RevNetGLU.pt)
-y = trainer.model(x)
-```
-where x is a torch tensor of a reverberated speech signal.
 
-#### Evaluate model
-
+### Evaluation
+The following function perform the evaluation stages of the model (Evaluate using the Librispeech test set, Evaluate in noisy conditions using the UrbanSound8k dataset) and exports the figures in a new folder.
 ```
 trainer.test()
 trainer.test_in_noisy()
 trainer.export_results()
 ```
+
+### Inference
+Let x be a torch tensor containing a reverberated speech sample waveform (shape: (1, time_samples), Float tensor). Type the following commands to get the model inference
+
+```
+trainer = Trainer(sample_len=6)
+trainer.load_model('models/ReverbNet_OrilRiver.pt)
+y = trainer.model(x)
+```
+where y (shape: (1, N_parameters)) is a vector containing the estimated reverberation parameter values corresponding to ['wet_db', 'reverb_db', 'decay_time_sec', 'room_size'] (in the default configuration).
+
 
 ### Authors
 
