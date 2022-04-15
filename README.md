@@ -73,7 +73,7 @@ where y (shape: (1, N_parameters)) is a vector containing the estimated reverber
 ### Authors
 
 * **Iordanis Thoidis**, Aristotle University of Thessaloniki, Department of Electrical and Computer Engineering, Laboratory of Electroacoustics and TV Systems
-* **Nikos Vryzas**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
+* **Nikolaos Vryzas**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
 * **Lazaros Vrysis**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
 * **Rigas Kotsakis**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
 * **George Kalliris**, Aristotle University of Thessaloniki, Department of Journalism and Mass Media, Laboratory of Electronic Media
